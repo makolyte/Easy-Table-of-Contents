@@ -220,9 +220,19 @@ if ( ! class_exists( 'ezTOC' ) ) {
 
 			$js_vars = array();
 
-			wp_register_style( 'ez-icomoon', EZ_TOC_URL . "vendor/icomoon/style$min.css", array(), ezTOC::VERSION );
-			wp_register_style( 'ez-toc', EZ_TOC_URL . "assets/css/screen$min.css", array( 'ez-icomoon' ), ezTOC::VERSION );
+			/*
+			10/10/20 - makolyte - comment out registering unnecessary vendor js and fonts. 
+							    - These aren't needed if:
+								- Smooth Scroll=false
+								- Toggle Visibility=false
+								- Hide Initially=false
+								
+								With these settings off, it was still loading the font, which is render-blocking according to GTMetrix
+			*/
+			//wp_register_style( 'ez-icomoon', EZ_TOC_URL . "vendor/icomoon/style$min.css", array(), ezTOC::VERSION );
+			wp_register_style( 'ez-toc', EZ_TOC_URL . "assets/css/screen$min.css", array( ), ezTOC::VERSION );
 
+			/*
 			wp_register_script( 'js-cookie', EZ_TOC_URL . "vendor/js-cookie/js.cookie$min.js", array(), '2.2.1', TRUE );
 			wp_register_script( 'jquery-smooth-scroll', EZ_TOC_URL . "vendor/smooth-scroll/jquery.smooth-scroll$min.js", array( 'jquery' ), '2.2.0', TRUE );
 			wp_register_script( 'jquery-sticky-kit', EZ_TOC_URL . "vendor/sticky-kit/jquery.sticky-kit$min.js", array( 'jquery' ), '1.9.2', TRUE );
@@ -234,6 +244,7 @@ if ( ! class_exists( 'ezTOC' ) ) {
 				ezTOC::VERSION . '-' . filemtime( EZ_TOC_PATH . "assets/js/front$min.js" ),
 				true
 			);
+			*/
 
 			if ( ! ezTOC_Option::get( 'exclude_css' ) ) {
 
