@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name: Easy Table of Contents
+ * Plugin Name: Easy Table of Contents - Makolyte Mod
  * Plugin URI: http://connections-pro.com/
  * Description: Adds a user friendly and fully automatic way to create and display a table of contents generated from the page content.
- * Version: 2.0.11
+ * Version: 2.0.11.1
  * Author: Steven A. Zahm
  * Author URI: http://connections-pro.com/
- * Text Domain: easy-table-of-contents
+ * Text Domain: easy-table-of-contents-makolyte-mod
  * Domain Path: /languages
  *
  * Copyright 2020  Steven A. Zahm  ( email : helpdesk@connections-pro.com )
@@ -26,7 +26,7 @@
  * @package  Easy Table of Contents
  * @category Plugin
  * @author   Steven A. Zahm
- * @version  2.0.11
+ * @version  2.0.11.1
  */
 
 use function Easy_Plugins\Table_Of_Contents\String\mb_find_replace;
@@ -47,7 +47,7 @@ if ( ! class_exists( 'ezTOC' ) ) {
 		 * @since 1.0
 		 * @var string
 		 */
-		const VERSION = '2.0.11';
+		const VERSION = '2.0.11.1';
 
 		/**
 		 * Stores the instance of this class.
@@ -174,7 +174,7 @@ if ( ! class_exists( 'ezTOC' ) ) {
 		public static function loadTextdomain() {
 
 			// Plugin textdomain. This should match the one set in the plugin header.
-			$domain = 'easy-table-of-contents';
+			$domain = 'easy-table-of-contents-makolyte-mod';
 
 			// Set filter for plugin's languages directory
 			$languagesDirectory = apply_filters( "ez_{$domain}_languages_directory", EZ_TOC_DIR_NAME . '/languages/' );
